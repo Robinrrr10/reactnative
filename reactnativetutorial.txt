@@ -1,0 +1,216 @@
+React Native Tutorial
+---------------------
+
+Link:
+https://www.youtube.com/watch?v=LWs6dY92_MU&list=PL8kfZyp--gEXs4YsSLtB3KqDtdOFHMjWZ&index=3
+
+Tutorial 1: Introduction
+----------
+React native is build on top on javascript.
+It is used to build android, ios and web apps
+React native will convert UI code to web, android or ios
+Mostly the UI related will be written in UI native component and logic will be written in javascript
+
+
+Tutorial 2: Setup and Creating first app with expo
+---------------
+
+Go to https://reactnative.dev/
+Click getting started
+Click on environment setup -> Setting up the development environment
+It gives two option to install 1. Expo cli 2. React native cli
+
+Expo cli vs react native cli
+
+Expo cli:
+1. Its is free third party's one
+2. Easy to setup and run
+3. Native feature wont be available.
+4. Mostly for starting android and ios
+5. Less control. We wont have more control on it
+
+React native cli:
+1. Its native cli
+2. Complex to setup and run
+3. Its a native feature
+4. Can write own code to start for android and ios
+5. Has more control. We have all the control of this
+
+
+Go to https://expo.dev/
+We can check the sample code and its look in main page.
+we can select web or android or ios or my device to show the preview
+To run in our own device, we need to install expo from play store or app store.
+Scan the QR code which is shown in expo portal
+
+
+Installation:
+Install recent node js from https://nodejs.org/en/download/
+Give below command to check whether node js is installed or not
+node -v
+npm -v
+
+We can use any IDE. Mostly the visual studio code would be better.
+
+To install expo, use any one of the below command:
+npm install -g expo-cli
+or
+yarn global add expo-cli
+
+
+To create first project using expo use below command:
+expo init projectname
+Eg:
+expo init myfirstapp
+
+//we can select blank if we want to create with blank project. 
+Project will be created.
+Project will be created by default with yarn.
+yarn start - will used to open the expo page. There we can choose what is required
+yarn android - It will run on android
+yarn ios - It will run on ios
+yarn web - It will run on web
+
+
+Use below command to go inside the created project:
+cd projectname
+Eg:
+cd myfirstapp
+
+Use below command to run the project:
+yarn start
+
+//This will show the QR code and also opens the expo in browser.
+There also we can see the QR code. We can select the QR code in expo app to run on the device.
+The web portal also shows, which portal we wanted to run. android or ios or web etc. we can select that
+
+
+To change content:
+Go to App.js file
+Change the content and see whether it is reflecting or not
+
+
+
+Tutorial 3: Create native app with react cli and ejecting expo project
+-----------------------
+react naticel cli project will have more feature and control when compare to expo project
+
+Go to https://reactnative.dev/
+Click Get started
+Click environment setup
+Select React native quick start
+Select development os (PC OS)
+Select Target os (mobile os)       //ios will be supported only in mac os
+
+
+Follow the instruction given in documentation
+Install node js, java and setup the environment variable for java
+Node version should be 10 or higher
+jdk version should be 8 or higher
+
+
+Install android studio and setup the environment variable for android sdk
+Install latest version of android studio. 
+Open android studio, go to sdk manager
+Select show package details   //Here we can see the android version
+Go to sdk tool tab, we can see the installed sdk tool version. Make sure package and sdk tool version are installed for same version
+Add ANDROID_HOME environment variable for sdk path
+Add ANDROID_PTOOLS enviroment variable for platform tools path
+
+//if we previously installed react-native-cli package, then we need to remove that as it might cause some unexpected issue
+
+
+Go to folder where we wanted to create new project
+Use below command to create new project
+npx react-native init Projectname
+npx react-native init MyFirstProject
+//This will create the project with default dependencies
+Go inside the project using cd command
+cd MyFirstProject
+
+We can use physical device or emulator device
+
+
+Make sure virtualization is enabled in system.
+
+Open android studio, Open AVD manager
+Here we can see list of emulator, if not there we can create new one by giving required details.
+After adding the emulator, we can launch the emulator
+Wait for emulator to fully up
+If we face any problem in AVD manager, then go to SDK manager and check whether emulator accelator is installed or not
+
+
+Use below command to build the project
+npx react-native start
+
+
+Open one more terminal and 
+Use below command to install and run the apk 
+npx react-native run-android
+//This will run the app in emulator/device
+//we can see the app will lauching a
+//now we can edit the content to check whether edited content is reflecting or not
+
+Thats it
+
+
+
+Converting expo project to react native project:
+
+Go to the root of the project.
+Eg:
+cd MyFirstProject
+
+Run below command to eject from expo and show react native project
+Eg:
+npm run eject  
+//it will asks few details, give required details
+//if we eject in mac system, we will have android and ios package. 
+// if we eject in windows or linux system, then we will have only android package
+
+Give below command to run in device/emulator
+npx react-native run-android
+//This will run the app in device/emulator
+
+Thats it
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Notes:
+------
+------
+
+expo build:android     //This is to create apk and save to expo site
+
+adb install file.apk    //This is to install apk in connected device using adb command
+
+
+npm run eject  //This will create folder seperately for android/ios 
+
+
+react-native bundle --platform android --dev false --entry-file index.js --bundle-output android/app/src/main/assets/index.android.bundle --assets-dest android/app/src/main/res
+//This command is to build the bundle
+
+cd android
+
+
+./gradlew assembleDebug
+
+
+
+
+
+
+
+
