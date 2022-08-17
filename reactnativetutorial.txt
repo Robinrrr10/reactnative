@@ -177,6 +177,116 @@ Thats it
 
 
 
+Tutorial 4: VS code for react native
+------------------------------------
+This video is related to usefull plugins for react native projects in visual studio code and basics of visual studio code IDE
+we can type vs code download in google and select the official link to download vs code
+We can use ctrl/command + = to zoom in and ctrl/command + - to zoomout
+We can change the IDE theme/color in File -> Preferencess -> color theme 
+We can click on extension to install any exta plugins
+
+
+Below are the plugins
+material icon theme - this will give different icon for each file type extension etc
+react native snippets - this will used for react native applications. helps in auto completion and more
+react native tools - This will help to run or debug react native application in vs code
+color highlights - This will help to show colors. even in ccs if we use color related code, it will highligt the same color
+Bracket pair colorizer - this will helps to show color for brace, where the brace of the class/method started and end
+npm intelligence - this will help regarding npm. Eg: auto completion of node/npm related code etc
+git lens - this will help to manage the project git repo in vs code
+alt + shift + F - this will help to format the alignment of code
+File->auto save - this will help to save the code automatically
+view->show minimap - this will show all code in mini dialog. used for scrolling the code if there are more lines
+We can click on left explorer icon for more space for coding
+Terminal -> new terminal - to show the new terminal. for switching different terminal we can select in below
+We can click on search icon in left - to search or replace the text - using ctrl + shift + F
+clicking on one file, will show the content in tab
+double clicking the file will open another tab
+view->appearance -> full screen/zen mode - this is for giving more space for coding
+
+
+
+
+Tutorial 5: structure and basics of react native project
+--------------------
+Create a fresh react native project using command
+
+
+Below are the files/folders and its purpose:
+__tests__ - this folder will contains all unit test class. by default, it will have only one, we can add that later
+android - this folder has files and folder related to android app. if we created the project with expo, instead of android/ios, it will have expo folder
+ios - this folder has files and folder related to ios app.  if we created the project with expo, instead of android/ios, it will have expo folder
+node_modules - this folder has all packages related to node and react native
+App.js - this is the main file. this has base of the project. This is important file. This is responsible for showing something on the screen
+app.json - this file has name and display name of the app. This will contain the configuration of the app
+index.js - this is the start file of the project. this will call App.js and app.json etc
+package.json - this will have the dependencies and scripts for starting and others etc. When installing node modele, name and version will be saved here
+
+
+
+to add commands we can use like below
+/* my commands */
+
+
+For every change the app will refresh automatically.
+we can press r key for manually refresh
+we can press d key for opening developer options
+
+
+Lets press the d key to open developer options
+Below are options in developers options
+Reload - this is to reload the app
+Debug - this is to debug the project
+Change bundle location - it is to change bundle location. no need to use as of now
+Toggle inspector - this is used to inspect each element in screen
+Disable fast refresh - here we can enable or disable auto refresh if any changes in code
+Enable sampling profiler - not need to use as of now
+Show perf monitor - This will show few perf monitoring of the app in device 
+Settings - This is for debugging and performance
+If we are using real device, we can open the developer menu by shaking the device
+
+
+
+Below are few details about the code in App.js
+
+we can see, it will import "react" and component of "react-native"
+and there are other component which will be imported from other module
+
+Modify below line:
+const App: () => React$Node = () => {    //old
+to:
+const App = () => {      //modified       //Here App is like html
+
+const styles = StyleSheet.create({   //This is like css
+
+export default App;   //Finally App will be exported
+
+
+Below are few tags and its purpose:
+<StatusBar>  - It controls the status bar of the device (Top most bar of the device)
+<SafeAreaView> - It is like body of the page
+<ScrollView>  - It is for creating the scrollable content/page
+<View> - It is simular to div. 
+<Text> - This is for adding the text
+
+<Button> - this is for adding button. We need to give title and onPress
+Eg:
+<Button title="My Youtube channel" onPress={ () => {Linking.openURL('http://youtube.com/fdhkah-dfk')} }></Button>
+//Here the button will be disabled as "My Youtube channel". When pressingthe button, it will open the youtube in browser or youtube app
+
+
+Other options:
+onPress - This specifies, When pressing that element what should do
+
+
+Sometime the content wont be directly available in same file, it might in other file, it will be imported and added here
+Eg: LearnMoreLinks
+
+//In few tags we can see, it will calls the styles sheet Eg: <View style={styles.myview}> 
+
+We can modify the content as per our need
+
+
 
 
 
@@ -206,6 +316,12 @@ cd android
 
 
 ./gradlew assembleDebug
+
+
+
+react-native run-android      //This command will be used to run the app
+or
+npm run android //we can use this command also. Because in script, it will still call react-native run-android command
 
 
 
