@@ -288,7 +288,50 @@ We can modify the content as per our need
 
 
 
+Tutorial 6: Purpose of useState() function
+-------------------------------------------
 
+
+UseState can be used for setting the variable that can be changable in same page
+const [variableName, setVariableName] = useState['defaultvalue']
+Eg:
+const [name, setName] = useState('Ramu')
+
+To change or set the new name we use setName here
+To access or read the name we use name here
+
+Example:
+
+const App = () => {
+
+  const [name, setName] = useState('Raja')
+  const [student, setStudent] = useState({sname: 'Aman', sage: 26})
+  const [male, isMale] = useState(true)
+
+  const changeName = () => {
+    setName('Shuraj')
+  }
+
+  const changeStudentDetail = () => {
+    setStudent({sname: 'Bala', sage: 31})
+  }
+
+  const changeNameAndGender = () => {
+    setName('Shuraj')
+    isMale(false)
+  }
+
+  return (
+    <View style={styles.body}>
+      <Text style={styles.maintext}> Hi {name}</Text>
+      <Button title="Change name" onPress={changeName}></Button>
+      <Text style={styles.maintext}> Student name is {student.sname} and age is {student.sage}</Text>
+      <Button title="Change student" onPress={changeStudentDetail}></Button>
+      <Text style={styles.maintext}> {name} gender is {male? "Male" : "Female"} </Text>
+      <Button title="Change name and gender" onPress={changeNameAndGender}></Button>
+    </View>
+  );
+};
 
 
 
