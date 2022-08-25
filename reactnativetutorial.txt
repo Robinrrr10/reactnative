@@ -335,7 +335,132 @@ const App = () => {
 
 
 
+Tutorial 7: Styles and style sheet
+----------------------------------
+styles are used to style the page.
+styles in react native is very simular to css in html
+we can add style in inline or using StyleSheet
 
+Example of style in inline:
+<View style={{
+	flex: 1,
+	backgroundcolor: "#232890"
+}}>
+
+
+
+Example of StyleSheet:
+<View style={styles.mybody}>
+
+const styles = StyleSheet.create({
+	mybody: {
+	flex: 1,
+	backgroundcolor: "#897711"
+	},
+	text: {
+	color: "#901122"
+	}
+})
+
+
+changing the any params or value in style will reflect in UI.
+Each component will accept certain style properties. Some wont accepts others style properties.
+Go reactnative.dev -> component
+Go to basic component and select the component which we want to check what are style properties available
+Search for style in page. Click on view style or text style or props which shows
+This will show what are the style properties available for the selected components.
+By this way we can check what the stype properties support for each UI components
+
+While writing the stype properties it will show suggessted or available stype properties.
+If it not shows we can click ctrl+space to show the matching one for typed text
+
+width and height we can use in two mode. pixel as below or percentage as next below
+Eg:
+width: 240,
+height: 340   //This will take in pixel
+
+or
+width: '100%',
+height: '50%'     //This will take in percentage
+
+
+
+Below are few style properties. There are much more.
+
+width: '100%'    //To give the width
+
+height: '70%'    //To give the height
+
+backgroundColor: "#ffffff"    //To give background color
+
+alignItems: 'center'    //To align the item in center
+
+justifyContent: 'center'
+
+borderWidth: 10      //To give the border width
+
+borderColor: "#786100"   //To give the border color
+
+borderRadius: 10       //To give the border radius at cornor
+
+fontSize: 40          //To give font size
+
+fontStyle: 'italic'    //To give font style
+
+margin: 10           //To give margin size. What should be space give between element and other element
+
+textTransform: 'uppercase'    //To give the text to be upper or lowercase
+
+
+//There are more. few will work only for specific component. So always look into the reactnative.dev -> components -> any basic components -> style 
+
+
+StyleSheet:
+In Below link you can find all properties of StyleSheet
+reactnative.dev -> components -> select StyleSheet in basic components
+
+We can use create() method to create style object
+
+compose() and flatten() is to combine two or more stylesheet objects //If it has same property, style in second param will override style in first param
+
+
+Example of composite:
+import React from 'react';
+import { StyleSheet, Text, View } from 'react-native';
+
+const App = () => (
+  <View style={container}>
+    <Text style={text}>React Native</Text>
+  </View>
+);
+
+const page = StyleSheet.create({
+  container: {
+    flex: 1,
+    padding: 24,
+    backgroundColor: '#fff',
+  },
+  text: {
+    fontSize: 20,
+    color: '#000'
+  },
+});
+
+const lists = StyleSheet.create({
+  listContainer: {
+    flex: 1,
+    backgroundColor: '#61dafb',
+  },
+  listItem: {
+    fontStyle: 'italic',
+    fontWeight: 'bold'
+  },
+});
+
+const container = StyleSheet.compose(page.container, lists.listContainer);
+const text = StyleSheet.compose(page.text, lists.listItem);
+
+export default App;
 
 
 
