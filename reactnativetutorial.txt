@@ -465,6 +465,55 @@ export default App;
 
 
 
+Tutorial 8: Flex
+-----------------
+
+flex - This is used to give ratio of each element. If there is only one element and its value is one. Then it will take full page or full width and height
+flexDirection - this is used to align in colum wise or row wise
+alignItems - used to align horizontally
+justifyContent - Used to align vertically
+
+
+flex: 1   //default is full page
+
+lexDirection: "column"   //Add each element below
+
+alignItems: "center"    //horizontally center
+
+justifyContent "center" //vertically center
+
+
+flex //will take the size as ratio
+
+flex: 2
+flex: 3
+//item with flex 2 and flex 3 will have the size with ratio of 2 and 3
+
+flexDirection: "column"   //content will be added below
+flexDirection: "row"    //content will be added right side
+flexDirection: "column-reverse"   //content will be added below and order of contents will be reversed
+flexDirection: "row-reverse"    //content will be added right side
+
+//Justify is related to vertical alignment
+justifyContent: 'flex-start'  //Keep all content in top
+justifyContent: 'flex-end'   //Keep all content in bottom
+justifyContent: 'center'   //Keep the content in center
+justifyContent: 'space-between' //Has even space between each content. But in top and bottom it wont have any space
+justifyContent: 'space-evenly' //Has even space between each content. Has same space in top and bottom and then star the element
+justifyContent: 'space-around' //There will be equal spaces in each content. But it will add double spaces between content. Eg: each content will be added along with up and down space
+
+//alignItems is related to horizontal alignment
+alignItems: "center" //Keep the content in center
+alignItems: "flex-start"  //Keep the content in right side
+alignItems: "flex-end"    //Keep the content in left side
+lignItems: "stretch"  //stretch the content in full length 
+
+
+
+------
+
+
+
 Notes:
 ------
 ------
