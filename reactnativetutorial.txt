@@ -662,6 +662,24 @@ const myNestedList = [
   
   
   ----
+  
+  
+  Tutorial 11: TextInput and Keyboard
+---------------------------------
+TextInput:
+This is used to give text input
+Below are few properties of TextInput field
+placeholder - This is to add placeholder
+multiline - This is to add multiple lines
+keyboardType - This is to define which keyboard it should use for this input.
+maxLength - this is to add maximum number of character allowed
+editable - Whether it can be editable or not. By default it is true
+secureTextEntry - This wont show the text. shows dot. Used for password field
+
+We can see all its properties in document
+
+
+------------
 
 
 
