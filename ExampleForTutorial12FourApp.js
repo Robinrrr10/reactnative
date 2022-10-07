@@ -39,7 +39,6 @@ const App = () => {
     />
     <TouchableWithoutFeedback style={styles.touOp}
     onPress={myOnPressHander}
-    underlayColor={"#230920"}
     >
     <Text style={styles.teext}>{butName}</Text>
     </TouchableWithoutFeedback>
