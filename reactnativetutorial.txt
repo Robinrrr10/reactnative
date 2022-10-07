@@ -728,6 +728,28 @@ This Pressable has more feature compare to other.
 
 ------------
 
+Tutorial 13: Alert and Toast message
+-------------------------------
+Alert:
+Alert.alert() - this is used to display the alert message
+Alert.alert() - This accept four parameter. Title of alert, message, array of buttons and options
+android can show only 3 button in alert
+ios can have n number of button in alert
+We can have onPress for each button to call function
+By default one button should be clicked for alert to be removed
+{cancelable: true} - this can be used to remove if user press outside. we can have onDismiss to call any function
+
+
+ToastAndroid:
+Toast messasge is only for android
+ToastAndroid.show() - Here we will give message of the toast and duration
+ToastAndroid.showWithGravity() - Here we will give message of the toast, duration and location of the toast message
+ToastAndroid.showWithGravityAndOffset() - - Here we will give message of the toast, duration, location of the toast message and bottom and left offset. So that we can control the location
+Duration will be given as ToastAndroid.SHORT, ToastAndroid.LONG. 2 sec or 3 sec respectively
+Location will be given as ToastAndroid.TOP, ToastAndroid.CENTER, ToastAndroid.BOTTOM
+
+----
+
 
 
 Notes:
