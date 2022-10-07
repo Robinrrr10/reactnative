@@ -679,6 +679,53 @@ secureTextEntry - This wont show the text. shows dot. Used for password field
 We can see all its properties in document
 
 
+
+
+------------
+
+
+Tutorial 12: Button, TouchableOpacity, TouchableHighlight, TouchableWithoutFeedback,Pressable
+-----------------------------------
+Button:
+title - this is mandatory. This will be shown
+onPress - this is to define what to do when button was pressed. We can call other function or we can write inline function
+disabled - This is used to disable the button pressing
+color - this is used to add button color
+Button has only few properties and few stying. So we use other component like below
+
+
+TouchableOpacity:
+This is not the button. But we can use them like a button using style
+We can add Text tag inside ToubleOpacity to act like name of the button
+onPress - this is call other function 
+We can add more styles and customise to look like button
+We can add width, height, alignItems and background color to look like button
+activeOpacity - This is make the button grey on time of pressing. Default value is 0.2 of the opacity. We can give from 0.1 to 1.0
+
+
+TouchableHighlight:
+This will high light, when it was pressed
+underlayColor - this is specity color when pressing happens
+
+
+TouchableWithoutFeedback:
+This wont show any feedback(change style) when pressed. 
+End user cannot see when it was clicked
+But we can still add View tag inside if required
+
+
+Pressable:
+This the new component for button. Has more features
+We can add Text tag to add button name
+onPress - We can onPress if we want to call any function when pressing
+onLongPress - we can call any function when there is long press
+delayLongPress - This is to change the default value of long press. Default value is 500 whichi is in mill sec. We can give like 2000, if we need 2 sec as long press. Eg: delayLongPress = {2000}
+hitSlop - used to provide addition size of this button. Eg: hitSlop={{top: 20, bottom: 20, right: 20, left: 20}}
+disabled - this is to disable
+android_ripple - this will give grafical ripple effect for this button when click. This is only for android. Eg: android_ripple={{color:"#782366"}}
+This Pressable has more feature compare to other.
+
+
 ------------
 
 
