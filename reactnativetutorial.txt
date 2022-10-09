@@ -750,6 +750,22 @@ Location will be given as ToastAndroid.TOP, ToastAndroid.CENTER, ToastAndroid.BO
 
 ----
 
+Tutorial 14: Modal & Custom alert message
+-----------------------------------------
+Using Moday we can create custom pop alert
+visible - Using this we can control whether to disable the modal or not. By make this true and false we can control to show the popup or not Eg: visible={true}
+onRequestClose - This is to close the modal view when clicking back button
+we can add View, Text or any other tag inside modal. with style we can modify and create custom alert
+transparent - This is to add transparent view. 
+hardwareAccelerated - to increase performance in android. 
+We can add transparent value at end of the color value Eg: backgroundColor: "#56118299" //here 99 is the transparent value for the given color
+We can add few style like width, borderRadius to make it better
+we can add different Text in different view for title, message of the custom alert
+For button we can use Pressable and make the visibility false of Modal if needed
+animationType - to add the animation when opens Eg: animationType='fade'
+
+------
+
 
 
 Notes:
