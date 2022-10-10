@@ -766,6 +766,19 @@ animationType - to add the animation when opens Eg: animationType='fade'
 
 ------
 
+Tutorial 15: Image and ImageBackground
+--------------------------------------
+Image - We can use Image tag to show the image
+source - to give the location of image Eg: source={require('./asserts/error.png')}
+resizeMode - To resize the image with inbuild values. Eg: resizeMode='stretch' //This will resize with fitted value
+it support jpeg, png, gif and many more
+source - to give the location of url Eg: source={{uri:'https://drive.s3.amazon.aws/images/hhkhjd.jpeg'}}
+we need internet if we give the image of url. We can handle with our own logic to show default image if not internet
+blurRadius - This is to blur the image Eg: blurRadius={3}
+ImageBackground - We can use ImageBackground tag to show the image in background
+
+-----
+
 
 
 Notes:
