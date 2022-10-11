@@ -780,6 +780,44 @@ ImageBackground - We can use ImageBackground tag to show the image in background
 -----
 
 
+Tutorial 16: Custom components(custom tags) and Props
+--------------------------------------
+We can add our own tags like below
+Here MyBut, MyButTwo and MyButThree will act as tag.
+We can use like <MyBut> etc
+The function should accept props. This has all properties.
+we can add props.anynamehere. We can pass that anynamehere from where we are using.
+props.children can be used to for reading the text between. Eg: <MyBut>mytext<MyBut>>   //Here mytext will be read via props.childer.
+For more details refer example
+
+
+
+Eg:
+Eg: to create tag:
+import React from "react";
+import { Button } from "react-native";
+
+const MyBut = (props) => {
+    return(
+     <Button
+        title={props.name}
+        onPress={props.myOnPress}
+        color={props.backColor}
+    >
+    </Button>
+    )
+}
+
+export default MyBut;
+
+
+Eg: To use tag:
+<MyBut myOnPress={myOnPressHander} name="login" backColor="#656"></MyBut>
+
+
+-----
+
+
 
 Notes:
 ------
