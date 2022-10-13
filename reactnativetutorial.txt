@@ -817,6 +817,36 @@ Eg: To use tag:
 
 -----
 
+Tutorial 17: React navigation V5 - Stack navigation
+---------------------------------------------
+When we go to Screen A, then Screen B and then Screen C. Now current screen is C and Screen B still exists behind Screen C and Screen A still exists behind Screen B.
+To install use below commands. Refere link: https://reactnavigation.org/docs/getting-started
+npm install @react-navigation/native
+//This will install react navigation components
+Install react-navigation dependencies using below commands. From this link, we can get recent below commands: https://reactnavigation.org/docs/getting-started
+npm install react-native-screens react-native-safe-area-context
+Install stack using below command. From this link we can take this command. https://reactnavigation.org/docs/stack-navigator
+npm install @react-navigation/stack
+NavigationContainer - This tag will be used for handling navigation in top level. Handle linking of pages, stage change, system back button etc
+Create Stack from createStackNavigation().
+Eg:
+const Stack = createStackNavigation()
+Stack.Navigator - This navigator
+Stack.Screen - This tag is to specify the screen
+name in Stack.Screen - name of the screen. Name will show in top as header. We can delete this by adding property options={{header: () => null}} in Stack.Screen
+component in Stack.Screen - Here we will call the function which takes navigation as argument and will returns screen page/code 
+By default, it will add the backbutton if we to next next page
+navigation.navigate("screennamehere") - using this we can navigate to any screen
+navigation.goBack()  - using this we can navigate to previous screen
+navigation.replace("screennamehere") - using this, it will replace older parent screen with the page we are giving. That page will be come the parent page. So we can cannot use back button to go back. Because that session will expire and replaced with new page. This will remove default backbutton as this page become current parent page also the navigation.goBack() will also not work as this become current page
+screenOptions - this will be used to modify few in properties in parent level/Stack.Navigator. Eg: screenOptions={{header: () => null}} - this will remove header in all pages
+
+//if you face any issue. install below
+npm install react-native-gesture-handler --save
+
+
+-----
+
 
 
 Notes:
