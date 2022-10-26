@@ -848,6 +848,134 @@ npm install react-native-gesture-handler --save
 -----
 
 
+Tutorial 18: React Navigation - Tab Navigator - Material Tab at Bottom & Top
+--------------------------------------------------------
+
+BottomTabNavigator:
+
+install bottom tab using below commands //Refer https://reactnavigation.org/docs/tab-based-navigation/
+npm install @react-navigation/bottom-tabs
+
+use const Tab = createBottomTabNavigator();  // createBottomTabNavigator - this used to create navigation tab in bottom
+
+use tab instead of stack // Tab.Navigator and Tab.Screen
+Here the tab will be created at the bottom of the page
+options={{headerShown: false}} - this is disable the header
+
+
+We can use icon for each tab using image or other.
+Eg: we can use react-native-vector-icons for adding icons/images. we can customize the icon if needed
+
+Refer https://github.com/oblador/react-native-vector-icons and https://oblador.github.io/react-native-vector-icons for more details 
+
+install with below command
+npm install --save react-native-vector-icons
+
+We have to add below line in android/app/build.gradle
+apply from: "../../node_modules/react-native-vector-icons/fonts.gradle"
+
+use below two command to sync in android
+cd android
+./gradlew clean
+
+go back and run the app
+cd ..
+npm run android
+
+
+Below we can see how to add tab and different options and uses etc. 
+
+
+<NavigationContainer>
+      <Tab.Navigator
+      screenOptions={({route}) => ({
+        tabBarIcon: ({focused, size, color}) => {
+          let iconName;
+          if(route.name==='Screen_A'){
+            iconName='cloud' //refer https://oblador.github.io/react-native-vector-icons for icon name
+            size = focused ? 30 : 20; //this is for changing the size of icon when focused/clicked
+            color = focused ? "#F0F" : "#888"; //This is to change the color when focused/clicked
+          }else if(route.name==='Screen_B'){
+            iconName='star'
+            size = focused ? 30 : 20;
+            color = focused ? "#F0F" : "#888";
+          }
+          return (
+            <FontAwesome5
+              name={iconName} //Here we are giving the icon name
+              size={size}  //Here we are giving the size of the icon
+              //color={color}  //Here we are giving the color of the icon
+            />
+          )
+        }
+      })}
+      tabBarOptions={{ //Currently tabBarOptions is deprecated.
+        activeTintColor: "#0F2", //to color active tab label
+        inactiveTintColor: "#F87", //to color inactive tab label
+        activeBackgroundColor: "#117733", //To add background color of the tab which is active
+        inactiveBackgroundColor: "#667788", //To add background color of the tab which is inactive
+        showLabel: true,   //To enable or disable the label of the tab
+        labelStyle: {fontSize: 17}  //To style the label of the tab
+      }}
+      >
+        <Tab.Screen name="Screen_A" component={ScreenA} 
+        options={{tabBarBadge: 3}} //This is for adding batch in button/icon. Eg: this number will show in top of the icon and highlighted. We can use dynamic value by passing as variable
+        //options={{headerShown: false}} //This is disable header
+        />
+        <Tab.Screen name="Screen_B" component={ScreenB} 
+        //options={{headerShown: true}}
+        />
+      </Tab.Navigator>
+    </NavigationContainer>
+
+
+
+
+
+MaterialBottomTabNavigator:   
+
+With MaterialBottomTabNavigator we can have more animation
+//refer https://reactnavigation.org/docs/material-bottom-tab-navigator/
+
+
+Install the package using below commands
+npm install @react-navigation/material-bottom-tabs react-native-paper react-native-vector-icons
+
+const Tab = createMaterialBottomTabNavigator(); //here we are using createMaterialBottomTabNavigator.
+
+We can use below three properties also in Tab.Navigator
+activeColor - to add color for active tab. Eg: activeColor="#FF9210"
+inactiveColor - to add color for inactive tab. Eg: inactiveColor="#888888"
+barStyle - to add style Eg: barStyle={{backgroundColor: "#552352"}}   
+And more are available
+
+
+
+
+MaterialTopTabNavigator:
+
+This will be used to add tab at the top of the page
+//refer https://reactnavigation.org/docs/material-top-tab-navigator/
+
+Install the packge using below command
+npm install @react-navigation/material-top-tabs react-native-tab-view
+
+const Tab = createMaterialTopTabNavigator(); //here we are using createMaterialTopTabNavigator()
+
+rerun the app and check
+npm run android
+
+//if any error is there, you can install below
+npm i react-native-pager-view
+
+
+
+
+//All these navigator will have simular navigate options to navigate. That will be same
+
+
+-----
+
 
 Notes:
 ------
