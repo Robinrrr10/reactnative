@@ -994,6 +994,7 @@ Eg:
 const Drawer = createDrawerNavigator();      //it will be imported from @react-navigation/drawer
 We can give <Drawer.Navigator> and <Drawer.Screen> instead of other
 
+//If we face any issue check https://reactnavigation.org/docs/drawer-based-navigation/ and https://reactnavigation.org/docs/drawer-navigator/#installation and follow the installation steps and try
 
 Properties of Drawer.Navigator:
 initialRouteName - using initialRouteName in Drawer.Navigator we can specify what should be the initial page. Eg: initialRouteName="Screen_B". By default it will take the first screen as initial page
