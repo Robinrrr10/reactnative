@@ -839,7 +839,7 @@ By default, it will add the backbutton if we to next next page
 navigation.navigate("screennamehere") - using this we can navigate to any screen
 navigation.goBack()  - using this we can navigate to previous screen
 navigation.replace("screennamehere") - using this, it will replace older parent screen with the page we are giving. That page will be come the parent page. So we can cannot use back button to go back. Because that session will expire and replaced with new page. This will remove default backbutton as this page become current parent page also the navigation.goBack() will also not work as this become current page
-screenOptions - this will be used to modify few in properties in parent level/Stack.Navigator. Eg: screenOptions={{header: () => null}} - this will remove header in all pages
+screenOptions - this will be used to modify few in properties in parent level/Stack.Navigator. Eg: screenOptions={{header: () => null}} - this will remove header in all pages. if that not works, you can use screenOptions={{headerShown: false}} Eg: <Stack.Navigator screenOptions={{headerShown: false}}>
 
 //if you face any issue. install below
 npm install react-native-gesture-handler --save
