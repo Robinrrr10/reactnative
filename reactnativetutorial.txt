@@ -977,6 +977,83 @@ npm i react-native-pager-view
 -----
 
 
+Tutorial 19: React navigation - Drawer navigation - side menu
+-----------------------------------------------------------
+Drawer is also called as side menu
+This will show hambager menu and its screen name as options. 
+By defaut, first screen will be shown
+We can press that options to navigating between screens
+or we can swipe left to right to show the menu
+
+To install its dependencies use below command. Refer https://reactnavigation.org/docs/drawer-based-navigation/
+npm install @react-navigation/drawer
+
+Run the app again to use this dependencies
+Create its object from createDrawerNavigator()
+Eg:
+const Drawer = createDrawerNavigator();      //it will be imported from @react-navigation/drawer
+We can give <Drawer.Navigator> and <Drawer.Screen> instead of other
+
+
+Properties of Drawer.Navigator:
+initialRouteName - using initialRouteName in Drawer.Navigator we can specify what should be the initial page. Eg: initialRouteName="Screen_B". By default it will take the first screen as initial page
+drawerPosition - to specify whether the slide should come from left or right side Eg: drawerPosition="right" - This will move the slide menu in right. By default it will be in left side
+drawerType - This is to specify the type.  drawerType="back" - Here the slide will be in behind the main screen and this will move the main window and show. "slide" - this will be right to main screen and this will also move the main window and show. "permanent" - this cannot be moved and it will be fixed. "front" - this is the default mode this will open the slide in front of main screen
+edgeWidth - here we can specify from where we can start swipe. Eg: edgeWidth={500} - as this is given 500, we can spice from middle to right, that also will open the slide. no need from start of left to right
+hideStatusBar={true} - this is hide the status bar of the mobile. Status bar is the area where it shows battery and other detail in top
+overlayColor - This is to specify the color of behind main area. Color will go from 0 to given value in transparent mode to main Eg: overlayColor="#786711". Eg: overlayColor="#78671190" - this is for color with transparent
+screenOptions={{
+	headerShown: true,  //This will show the header screen name and hambeger menu option. by default it will be false and it wont show hambeger menu and screen name in header
+	swipeEnabled: false //This is used to control and open drawer/slide using swipe. If it is false, then swipe wont work. By default, it will be true and it will open by swipe
+	gestureEnabled: false //This is used control removing of slide/drawer by touching outside. Byt defaut it will be true and by touching outside, it will remove the drawer/slide
+	headerTitleAlign: 'center' //This is specify the title to show in center or begining or at end
+	headerStyle: {
+		backgroundColor: "#782367"  //This is to give background color for header
+	}
+	headerTintColor: "#678233"  //This is to give color of the header text
+	headerTitleStyle: {    //This is to change the style of the header title
+		fontSize: 25,     //This is to change the font size of header title
+		fontWeight: "bold"   //This is give font weight of header title
+	}
+}}
+drawerStyle - this has multiple attribute to change the style of the slide/drawer
+Eg:
+drawerStyle={{
+	backgroundColor: "#e26711",  //This is for giving the background color of the slide
+	width: 250,  //This is to give width of the slide. Based on given width it will open the slide
+
+}}
+
+
+
+
+Properties of Drawer.Screen:
+name and component property works as same like other.
+options={{
+	title: "Profile"  //This is to give the name of the option to display. This title will be shown as option in menu instead of above name
+	drawerIcon: ({focused}) => (   //This is to give icon/image for the option 
+		<FontAwesome5 
+			name="btc"   //name of the icon
+			size={focused ? 25 : 20 }   //Its for giving the size. focused is used here because, if it is selected, it should be larger and previous size
+			color={focused? "#678811" : "232356"}   //Its for giving the color. If focused give one color if not then give other color 
+		/>
+	)
+}}
+
+
+
+If need we can give the hambeger menu by ourself and call by below
+navigation.openDrawer()   //this is to open the drawer/slide menu
+navigation.closeDrawer()   //This is to close the drawer/slide menu
+navigation.toggleDrawer()   //This is to to both operation. if open it will close. if close, it will open
+
+-------
+
+
+
+
+
+
 Notes:
 ------
 ------
