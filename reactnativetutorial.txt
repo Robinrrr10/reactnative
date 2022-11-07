@@ -834,7 +834,7 @@ const Stack = createStackNavigation()
 Stack.Navigator - This navigator
 Stack.Screen - This tag is to specify the screen
 name in Stack.Screen - name of the screen. Name will show in top as header. We can delete this by adding property options={{header: () => null}} in Stack.Screen
-component in Stack.Screen - Here we will call the function which takes navigation as argument and will returns screen page/code 
+component in Stack.Screen - Here we will call the function which takes navigation as argument and will returns screen page/code . navigation can be as argument or the navigation can come from useNavigation Eg: const navigation = useNavigation(); 
 By default, it will add the backbutton if we to next next page
 navigation.navigate("screennamehere") - using this we can navigate to any screen
 navigation.goBack()  - using this we can navigate to previous screen
