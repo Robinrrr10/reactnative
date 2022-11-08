@@ -994,15 +994,16 @@ Eg:
 const Drawer = createDrawerNavigator();      //it will be imported from @react-navigation/drawer
 We can give <Drawer.Navigator> and <Drawer.Screen> instead of other
 
-//If we face any issue check https://reactnavigation.org/docs/drawer-based-navigation/ and https://reactnavigation.org/docs/drawer-navigator/#installation and follow the installation steps and try
 
 Properties of Drawer.Navigator:
 initialRouteName - using initialRouteName in Drawer.Navigator we can specify what should be the initial page. Eg: initialRouteName="Screen_B". By default it will take the first screen as initial page
+IMPORTANT: if below properties is not working directly, you can give the same inside screenOptions. Refer example
 drawerPosition - to specify whether the slide should come from left or right side Eg: drawerPosition="right" - This will move the slide menu in right. By default it will be in left side
 drawerType - This is to specify the type.  drawerType="back" - Here the slide will be in behind the main screen and this will move the main window and show. "slide" - this will be right to main screen and this will also move the main window and show. "permanent" - this cannot be moved and it will be fixed. "front" - this is the default mode this will open the slide in front of main screen
-edgeWidth - here we can specify from where we can start swipe. Eg: edgeWidth={500} - as this is given 500, we can spice from middle to right, that also will open the slide. no need from start of left to right
-hideStatusBar={true} - this is hide the status bar of the mobile. Status bar is the area where it shows battery and other detail in top
+edgeWidth or swipeEdgeWidth - here we can specify from where we can start swipe. Eg: edgeWidth={500} - as this is given 500, we can spice from middle to right, that also will open the slide. no need from start of left to right
+hideStatusBar={true} or drawerHideStatusBarOnOpen: true - this is hide the status bar of the mobile. Status bar is the area where it shows battery and other detail in top
 overlayColor - This is to specify the color of behind main area. Color will go from 0 to given value in transparent mode to main Eg: overlayColor="#786711". Eg: overlayColor="#78671190" - this is for color with transparent
+IMPORTANT: if above properties are not working, you can give the same inside screenOptions.
 screenOptions={{
 	headerShown: true,  //This will show the header screen name and hambeger menu option. by default it will be false and it wont show hambeger menu and screen name in header
 	swipeEnabled: false //This is used to control and open drawer/slide using swipe. If it is false, then swipe wont work. By default, it will be true and it will open by swipe
