@@ -994,6 +994,12 @@ Eg:
 const Drawer = createDrawerNavigator();      //it will be imported from @react-navigation/drawer
 We can give <Drawer.Navigator> and <Drawer.Screen> instead of other
 
+//if any issue is there, we can add below line inside babel.config.js and reset the cache. For reset use below command: yarn react-native start --reset-cache //If command not works check in internet
+plugins: [
+    "react-native-reanimated/plugin",
+  ],
+ 
+//refer https://reactnavigation.org/docs/drawer-based-navigation/ and https://reactnavigation.org/docs/drawer-navigator#installation for more detail if failure
 
 Properties of Drawer.Navigator:
 initialRouteName - using initialRouteName in Drawer.Navigator we can specify what should be the initial page. Eg: initialRouteName="Screen_B". By default it will take the first screen as initial page
