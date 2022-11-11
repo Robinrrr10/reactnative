@@ -1058,6 +1058,26 @@ navigation.toggleDrawer()   //This is to to both operation. if open it will clos
 -------
 
 
+Tutorial 20: React Navigation - Passing data between screens
+------------------------------------------------------------
+
+navagation.navigate("Screen B", {myparam1: "value1", myparam2: "value2"}) - By this way we can pass the parameter to the screen when navigating
+ScreenB({navigation, route})  - route will be used to get multiple parameters - By this way we can get the parameter which will be pased using above
+const {firstParam, secondParam} = route.params  - By this way we can extract all parameter in the route and save it in different variables
+
+
+navigation.setParams({myparams: "myname"}) - this is to update the value of parameter
+
+From Drawer.Screen tag also we need to pass the parameter, if the screen expect parameter
+initialParams={{myparam1: "value1", myparam2: "value2"}}   //Parameter will be still read from drawer even if it is called any where.
+
+
+To directly reading from route.
+route.params?.message  // this to read the param directly. Here message is one of the param. if no value then it will be empty, it wont give error
+
+
+-----
+
 
 
 
