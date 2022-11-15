@@ -1078,6 +1078,73 @@ route.params?.message  // this to read the param directly. Here message is one o
 
 -----
 
+Tutorial 21: Debugging in VS Code IDE
+--------------------------------------
+To Connnect VS code for debugging, we need to install below plugin in VS code.
+react native tools    //Go to extension in vs code and search for "react native tool" and install
+
+
+After installing plugins,
+click run and debug in vs code, select react-native and then select attach to packagers then ok button.
+This will show one json file.   
+This json file will be created inside .vscode folder in the root of the directory. //launch.json will be created in .vscode folder
+This is related to vs code settings
+In feature if we wanted to add any extra configuration, we can click Add configuration
+
+Open one terminal and start using command "npx react-native start".
+Run the app using the command "npx react-native run-android"
+Click play icon in "Attach in packagers" in VS code
+Go to terminal where it shows the starting logs, and Press D in the terminal to open developer menu
+This will open react developer menu.
+Press debug option in app.
+Now debug should be connected with VS code.
+
+
+If debugging not connected/not openeed then follow below four lines.
+sometime it will open in chrome. there also we can see elements, network and etc
+To debug in vs code, close the debugger tab if that is already opened in chrome
+now click play icon in Attach in packagers in VS code again and check
+if not, then again go to terminal where we started and press D and select debug option
+
+
+Now we can click on the line(breakpoint) to debug.  it will be shown in red color
+All break point will be shown
+We can also see the debug console
+
+Now if we touch any thing in app, it will pause in break point
+Now the red color will be shown along with yellow color
+if we keep the cursor, it will show more information
+
+
+we can use below button to help debugging
+Continue - to continue the execution and it will pause in next breakpoint
+step over - this will move to the next line
+step in - this will go inside the function
+step out - this will move back to function call (go back to previous step/level)
+Restart - this will restart the debug
+Disconnect - this will disconnect the debug from vscode
+
+
+We can remove the breakpoint or disable the breackpoint
+If need we can try with for loop and its value initially
+We can hover on the line to see its values of the parameter
+
+
+in variables section will show values of parameters
+in call stack section will show latest/current method running
+
+Keeping the breakpoint in elements tag wont check line by line. so better to keep on logic
+But if there is any code logic in between element tags then we can use breakpoint and debug
+
+
+For expo project, the process of debugging is same, except doing extra changes in port
+For debugging expo project go to settings, go to react native port and change port number from 8081 to 19001 where expo project is running
+
+
+NOTE: THERE IS NO EXAMPLE FILE FOR TUTORIAL 21. THIS IS JUST FOR DEBUGGING REACT NATIVE APP IN VISUAL STUDIO CODE IDE
+
+
+-----
 
 
 
